@@ -40,7 +40,10 @@ func checkSquare(sudoku *[9][9]int, row int, col int, elem int) bool {
 
 func solve_sudoku(sudoku *[9][9]int, row, col int) {
 	for k := 0; k < 9; k++ {
-		if checkRow(sudoku, row, k) && checkCol(sudoku, col, k) && checkSquare(sudoku, row, col, k) {
+		if checkRow(sudoku, row, k) &&
+			checkCol(sudoku, col, k) &&
+			checkSquare(sudoku, row, col, k) {
+			// set value
 			sudoku[row][col] = k
 		}
 	}
