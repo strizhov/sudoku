@@ -5,7 +5,7 @@ import (
 )
 
 // check row for an element
-func checkRow(sudoku *[9][9]int, row int, elem int) bool {
+func checkRow(sudoku *[9][9]int, row, elem int) bool {
 	for i := 0; i < 9; i++ {
 		if sudoku[row][i] == elem {
 			return false
@@ -15,7 +15,7 @@ func checkRow(sudoku *[9][9]int, row int, elem int) bool {
 }
 
 // check column for an element
-func checkCol(sudoku *[9][9]int, col int, elem int) bool {
+func checkCol(sudoku *[9][9]int, col, elem int) bool {
 	for i := 0; i < 9; i++ {
 		if sudoku[i][col] == elem {
 			return false
@@ -25,7 +25,7 @@ func checkCol(sudoku *[9][9]int, col int, elem int) bool {
 }
 
 // check 3x3 square for an element
-func checkSquare(sudoku *[9][9]int, row int, col int, elem int) bool {
+func checkSquare(sudoku *[9][9]int, row, col, elem int) bool {
 	row = (row / 3) * 3
 	col = (col / 3) * 3
 	for i := 0; i < 3; i++ {
